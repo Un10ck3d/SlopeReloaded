@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 292584470}
   scoreText: {fileID: 1977532523}
-  speed: 150
+  speed: 130
   moveSpeed: 500
   speedUpSpeed: 80
 --- !u!1 &361025720
