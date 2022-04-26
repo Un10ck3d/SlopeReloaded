@@ -7,34 +7,55 @@ using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     public Rigidbody rb;
-    public Text scoreText;
+    public Text scoreTextObject;
     public float speed = 150f;
-    public float moveSpeed = 500f;
-    public float speedUpSpeed = 100f;
+    public float controllSpeed = 500f;
+    public float perSpeedUpMultiplier = 1f;
+    public float startBoostMultiplier = 1;
+    //private int score = 0;
+    //public int highScore = 0;
+    private float SpeedMultiplier = 1;
 
     void Start() {
-        rb.AddForce(0, 0, speed * 0.05f, ForceMode.Impulse);
+        // Start Boost
+        rb.AddForce(0, 0, speed * 0.05f * startBoostMultiplier, ForceMode.Impulse);
     }
 
+    // Fixed Update for physics
     void FixedUpdate()
     {
-        rb.AddForce(0, 0, speed * Time.deltaTime);
-        if (Input.GetKey("a")){rb.AddForce(-moveSpeed * Time.deltaTime, 0, 0);}
-        else if (Input.GetKey("d")){rb.AddForce(moveSpeed * Time.deltaTime, 0, 0);}
-        else if (Input.GetKey("right")){rb.AddForce(moveSpeed * Time.deltaTime, 0, 0);}
-        else if (Input.GetKey("left")){rb.AddForce(-moveSpeed * Time.deltaTime, 0, 0);}
+        // Give player correct speed
+        rb.AddForce(0, 0, speed * Time.deltaTime * SpeedMultiplier);
+        // Left and Right controlls
+        if (Input.GetKey("a") || Input.GetKey("left") || Input.GetKey("q")) {
+            rb.AddForce(-controllSpeed * Time.deltaTime, 0, 0);
+        }
+        else if (Input.GetKey("d") || Input.GetKey("right") || Input.GetKey("e")) {
+            rb.AddForce(controllSpeed * Time.deltaTime, 0, 0);
+        }
     }
 
+    // When collision or trigger it calls the SomeCollision() function
     private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.CompareTag("dead")) {SceneManager.LoadScene( SceneManager.GetActiveScene().name );}
-        else if (other.gameObject.CompareTag("speed")){rb.AddForce(0,0, speedUpSpeed * Time.deltaTime, ForceMode.Impulse);}
-    }
-
+        SomeCollision(other.gameObject);}
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.CompareTag("dead")) {SceneManager.LoadScene( SceneManager.GetActiveScene().name );}
+        SomeCollision(other.gameObject);}
+
+    // Logic for collision or trigger
+    void SomeCollision(GameObject other) {
+        // Check for Death
+        if(other.CompareTag("dead")) {
+            SceneManager.LoadScene( SceneManager.GetActiveScene().name );
+        }
+        // Check for speedup
+        else if (other.CompareTag("speed")) {
+            SpeedMultiplier += 0.5f;
+        }
     }
 
+    // Update function
     void Update() {
-        scoreText.text = (transform.position.z/25).ToString("0");
+        // Update scoretext
+        scoreTextObject.text = (transform.position.z/25).ToString("0");
     }
 }
