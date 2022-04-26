@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour
             SceneManager.LoadScene( SceneManager.GetActiveScene().name );
         }
         // Check for speedup
-        else if (other.CompareTag("speed")) {
+        else if (other.CompareTag("speed")) { 
             SpeedMultiplier += 0.5f;
         }
     }
