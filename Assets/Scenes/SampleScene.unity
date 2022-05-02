@@ -300,18 +300,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa86b30acd806b41ae1ab0976661c45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 5124181670348592267, guid: e2ce3dbf11e662c46beae803397d16f6, type: 3}
-  - {fileID: 4464954901555068543, guid: 81de71d7467aa6d4d8aaa42b42a93494, type: 3}
-  - {fileID: 5124181670348592267, guid: e2ce3dbf11e662c46beae803397d16f6, type: 3}
+  predeterment:
   - {fileID: 5124181670348592267, guid: e2ce3dbf11e662c46beae803397d16f6, type: 3}
   - {fileID: 4464954901555068543, guid: 1a3eaf07048fcd743ae73c623ff8ef8f, type: 3}
+  basic:
+  - {fileID: 4464954901555068543, guid: 81de71d7467aa6d4d8aaa42b42a93494, type: 3}
+  - {fileID: 5124181670348592267, guid: e2ce3dbf11e662c46beae803397d16f6, type: 3}
+  - {fileID: 4464954901555068543, guid: 089bbddb306a22b4d8fc808cbaa59f07, type: 3}
+  - {fileID: 4464954901555068543, guid: 81de71d7467aa6d4d8aaa42b42a93494, type: 3}
   level_parts: 0
-  levels_at_a_time: 10
+  levels_at_a_time: 20
   z_cord: 0
   y_cord: 0
   level_space: 1.1
   clone_ref: {fileID: 963194225}
+  speed: 0
+  nexo: 0
 --- !u!4 &361025722
 Transform:
   m_ObjectHideFlags: 0
