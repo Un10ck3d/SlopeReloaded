@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     public float controllSpeed = 500f;
     public float perSpeedUpMultiplier = 1f;
     public float startBoostMultiplier = 1;
-    //private int score = 0;
+    private int score = 0;
     //public int highScore = 0;
     private float SpeedMultiplier = 1;
 
@@ -56,6 +56,6 @@ public class Movement : MonoBehaviour
     // Update function
     void Update() {
         // Update scoretext
-        scoreTextObject.text = (transform.position.z/25).ToString("0");
+        scoreTextObject.text = (score).ToString("0");
     }
 }

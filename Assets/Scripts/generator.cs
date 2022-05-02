@@ -6,16 +6,19 @@ public class generator : MonoBehaviour
 {
     public GameObject[] predeterment;
     public GameObject[] basic;
+
+    [HideInInspector]
     public int level_parts = 0;
     public int levels_at_a_time;
     private int last;
     private int last2;
-    public int z_cord;
-    public int y_cord;
+    private float z_cord;
+    private float y_cord;
     public float level_space;
+    public float level_height;
     public GameObject clone_ref;
-    public int speed;
-    public int nexo = 0;
+    private int speed = 1;
+    private int nexo = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,9 +48,7 @@ public class generator : MonoBehaviour
             {
                 ftspeed = 3;
             }
-            print ("ft");
             print (ftspeed);
-            print ("f");
             print (fspeed);
             int nn;
             do
@@ -81,26 +82,24 @@ public class generator : MonoBehaviour
             if (type_of_array == "bas")
             {
                 clone = Instantiate(basic[index], new Vector3(0, y_cord, z_cord), Quaternion.identity);
-                Debug.Log("bas");
             }
             else
             {
                 clone = Instantiate(predeterment[index], new Vector3(0, y_cord, z_cord), Quaternion.identity);
-                Debug.Log("pre");
             }
             if (clone != null)
             {
                 clone.GetComponent<delete_check>().cam = clone_ref;
                 clone.GetComponent<delete_check>().spawn = this;
             }
-            z_cord = (Mathf.RoundToInt(z_cord + 20 * level_space));
-            y_cord = y_cord -8;
+            z_cord = z_cord + 20 * level_space;
+            y_cord = y_cord - level_height;
             level_parts ++;
         }
     }
     int Random_range()
     {
-        int nextpr = Random.Range(1, basic.Length);
+        int nextpr = Random.Range(0, basic.Length -1);
         return nextpr;
     }
 }
