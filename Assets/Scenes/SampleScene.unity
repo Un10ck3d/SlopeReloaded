@@ -267,10 +267,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 292584470}
   scoreTextObject: {fileID: 1977532523}
-  speed: 130
+  speed: 150
   controllSpeed: 500
-  perSpeedUpMultiplier: 2
+  perSpeedUpMultiplier: 1
   startBoostMultiplier: 1
+  score: 0
 --- !u!1 &361025720
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,8 +311,8 @@ MonoBehaviour:
   - {fileID: 4464954901555068543, guid: 81de71d7467aa6d4d8aaa42b42a93494, type: 3}
   level_parts: 0
   levels_at_a_time: 20
-  level_space: 1.1
-  level_height: 6
+  level_space: 1
+  level_height: 5
   clone_ref: {fileID: 963194225}
 --- !u!4 &361025722
 Transform:
@@ -1135,7 +1136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092821577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 11.03, z: -10}
+  m_LocalPosition: {x: 0, y: 11.03, z: -7.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

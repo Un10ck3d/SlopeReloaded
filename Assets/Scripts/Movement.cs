@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Movement : MonoBehaviour
+public class movement : MonoBehaviour
 {
     public Rigidbody rb;
     public Text scoreTextObject;
@@ -12,20 +12,21 @@ public class Movement : MonoBehaviour
     public float controllSpeed = 500f;
     public float perSpeedUpMultiplier = 1f;
     public float startBoostMultiplier = 1;
-    private int score = 0;
+    public int score = 0;
     //public int highScore = 0;
     private float SpeedMultiplier = 1;
 
     void Start() {
         // Start Boost
-        rb.AddForce(0, 0, speed * 0.05f * startBoostMultiplier, ForceMode.Impulse);
+        //rb.AddForce(0, 0, speed * 0.05f * startBoostMultiplier, ForceMode.Impulse);
     }
 
     // Fixed Update for physics
     void FixedUpdate()
     {
         // Give player correct speed
-        rb.AddForce(0, 0, speed * Time.deltaTime * SpeedMultiplier);
+        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, speed * SpeedMultiplier / 20);
+        //rb.AddForce(0, 0, speed * Time.deltaTime * SpeedMultiplier);
         // Left and Right controlls
         if (Input.GetKey("a") || Input.GetKey("left") || Input.GetKey("q")) {
             rb.AddForce(-controllSpeed * Time.deltaTime, 0, 0);
