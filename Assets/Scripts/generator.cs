@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class generator : MonoBehaviour
 {
+    // Jonathan edits:
+    public GameObject startObject;
+    public GameObject speedObject;
+
+    //private GameObject[] predeterment;
     public GameObject[] predeterment;
     public GameObject[] basic;
 
@@ -19,9 +24,12 @@ public class generator : MonoBehaviour
     public GameObject clone_ref;
     private int speed = 1;
     private int nexo = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+        predeterment.SetValue(startObject, 0);
+        predeterment.SetValue(speedObject, 1);
         new_level(0, 1, "pre");
     }
 
@@ -48,8 +56,8 @@ public class generator : MonoBehaviour
             {
                 ftspeed = 3;
             }
-            print (ftspeed);
-            print (fspeed);
+            //print (ftspeed);
+            //print (fspeed);
             int nn;
             do
             {

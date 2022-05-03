@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 292584470}
   - component: {fileID: 292584471}
   - component: {fileID: 292584472}
+  - component: {fileID: 292584473}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -272,6 +273,53 @@ MonoBehaviour:
   perSpeedUpMultiplier: 1
   startBoostMultiplier: 1
   score: 0
+  highScore: 0
+--- !u!114 &292584473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292584465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 66767f2ab74d56e4e9de6779f3f2ca52, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 292584472}
+        m_TargetAssemblyTypeName: movement, Assembly-CSharp
+        m_MethodName: controllFunc
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 69fbd0c5-1eb8-4637-a0e7-32300f6ffc21
+    m_ActionName: playerMovement/New action[/Keyboard/a,/Keyboard/d,/Keyboard/q,/Keyboard/e,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: playerMovement
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 963194227}
 --- !u!1 &361025720
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,14 +354,16 @@ MonoBehaviour:
   - {fileID: 4464954901555068543, guid: 1a3eaf07048fcd743ae73c623ff8ef8f, type: 3}
   basic:
   - {fileID: 4464954901555068543, guid: 81de71d7467aa6d4d8aaa42b42a93494, type: 3}
-  - {fileID: 5124181670348592267, guid: e2ce3dbf11e662c46beae803397d16f6, type: 3}
-  - {fileID: 5124181670348592267, guid: e2ce3dbf11e662c46beae803397d16f6, type: 3}
+  - {fileID: 4464954901555068543, guid: 27eb2bf55848d6a47ad490704b251a6f, type: 3}
   - {fileID: 4464954901555068543, guid: 81de71d7467aa6d4d8aaa42b42a93494, type: 3}
+  - {fileID: 4464954901555068543, guid: 27eb2bf55848d6a47ad490704b251a6f, type: 3}
   level_parts: 0
   levels_at_a_time: 20
   level_space: 1
   level_height: 5
   clone_ref: {fileID: 963194225}
+  startObject: {fileID: 5124181670348592267, guid: e2ce3dbf11e662c46beae803397d16f6, type: 3}
+  speedObject: {fileID: 4464954901555068543, guid: 1a3eaf07048fcd743ae73c623ff8ef8f, type: 3}
 --- !u!4 &361025722
 Transform:
   m_ObjectHideFlags: 0
