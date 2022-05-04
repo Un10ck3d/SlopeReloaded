@@ -7,7 +7,9 @@ using UnityEngine.InputSystem;
 
 public class movement : MonoBehaviour
 {
+    public Camera cam;
     public Rigidbody rb;
+    public Text speedUpText;
     public Text scoreTextObject;
     public float speed = 150f;
     public float controllSpeed = 500f;
@@ -20,7 +22,6 @@ public class movement : MonoBehaviour
 
     void Start() {
         // Start Boost
-        //rb.AddForce(0, 0, speed * 0.05f * startBoostMultiplier, ForceMode.Impulse);
     }
 
     // Fixed Update for physics
@@ -48,11 +49,17 @@ public class movement : MonoBehaviour
         // Check for speedup
         else if (other.CompareTag("speed")) { 
             SpeedMultiplier += 0.5f;
+            speedUpText.enabled = true;
+            increaseFOV();
         }
     }
 
     public void controllFunc(InputAction.CallbackContext value) {
         direction = value.ReadValue<float>();
+    }
+
+    void increaseFOV() {
+        cam.fieldOfView += 2;
     }
 
     // Update function

@@ -266,10 +266,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5bb335df537b754395aa0d0cd657237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 963194227}
   rb: {fileID: 292584470}
+  speedUpText: {fileID: 472584111}
   scoreTextObject: {fileID: 1977532523}
   speed: 150
-  controllSpeed: 500
+  controllSpeed: 800
   perSpeedUpMultiplier: 1
   startBoostMultiplier: 1
   score: 0
@@ -349,9 +351,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa86b30acd806b41ae1ab0976661c45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startObject: {fileID: 5124181670348592267, guid: e2ce3dbf11e662c46beae803397d16f6, type: 3}
+  speedObject: {fileID: 4464954901555068543, guid: 1a3eaf07048fcd743ae73c623ff8ef8f, type: 3}
   predeterment:
-  - {fileID: 5124181670348592267, guid: e2ce3dbf11e662c46beae803397d16f6, type: 3}
-  - {fileID: 4464954901555068543, guid: 1a3eaf07048fcd743ae73c623ff8ef8f, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   basic:
   - {fileID: 4464954901555068543, guid: 81de71d7467aa6d4d8aaa42b42a93494, type: 3}
   - {fileID: 4464954901555068543, guid: 27eb2bf55848d6a47ad490704b251a6f, type: 3}
@@ -359,11 +363,9 @@ MonoBehaviour:
   - {fileID: 4464954901555068543, guid: 27eb2bf55848d6a47ad490704b251a6f, type: 3}
   level_parts: 0
   levels_at_a_time: 20
-  level_space: 1
-  level_height: 5
+  level_space: 21
+  level_height: 0.8
   clone_ref: {fileID: 963194225}
-  startObject: {fileID: 5124181670348592267, guid: e2ce3dbf11e662c46beae803397d16f6, type: 3}
-  speedObject: {fileID: 4464954901555068543, guid: 1a3eaf07048fcd743ae73c623ff8ef8f, type: 3}
 --- !u!4 &361025722
 Transform:
   m_ObjectHideFlags: 0
@@ -379,6 +381,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &472584107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 472584108}
+  - component: {fileID: 472584110}
+  - component: {fileID: 472584111}
+  m_Layer: 5
+  m_Name: SpeedUpText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &472584108
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472584107}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1462494700}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 170.9}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &472584110
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472584107}
+  m_CullTransparentMesh: 1
+--- !u!114 &472584111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472584107}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Speed Up!
 --- !u!1 &517256112
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +900,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1977532520}
+  - {fileID: 472584108}
   m_Father: {fileID: 292584469}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 23.292, y: -0.094, z: -0.243}
@@ -877,8 +960,8 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 963194227}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PlaneDistance: 1
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -1094,7 +1177,7 @@ GameObject:
   - component: {fileID: 1977532522}
   - component: {fileID: 1977532523}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1186,7 +1269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092821577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 11.03, z: -7.25}
+  m_LocalPosition: {x: 0, y: 10.29, z: -7.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
