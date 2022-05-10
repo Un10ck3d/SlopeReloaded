@@ -42,6 +42,7 @@ public class movement : MonoBehaviour
 
     // Logic for collision or trigger
     void SomeCollision(GameObject other) {
+        speedUpText.enabled = false;
         // Check for Death
         if(other.CompareTag("dead")) {
             SceneManager.LoadScene( SceneManager.GetActiveScene().name );

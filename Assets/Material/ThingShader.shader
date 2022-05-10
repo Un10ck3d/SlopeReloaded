@@ -1,13 +1,17 @@
-Shader "Legacy Shaders/Diffuse - Worldspace" {
+Shader " Unlit/Thingshader" {
 Properties {
     _Color ("Main Color", Color) = (1,1,1,1)
     _MainTex ("Base (RGB)", 2D) = "white" {}
     _Scale("Texture Scale", Float) = 1.0
 }
 SubShader {
-    Tags { "RenderType"="Opaque" }
+    Tags { 
+        "RenderType"="Opaque" 
+        "UniversalMaterialType" = "Unlit"
+    }
     LOD 200
 
+Lighting Off
 CGPROGRAM
 #pragma surface surf Lambert
 
@@ -37,10 +41,11 @@ void surf (Input IN, inout SurfaceOutput o) {
         c = tex2D(_MainTex, UV* _Scale / 2); // use FLR texture
     }
 
-    o.Albedo = c.rgb * _Color;
+    o.Albedo = c.rgb;
+    o.Emission = +c.rgb;
 }
 ENDCG
 }
 
-Fallback "Legacy Shaders/VertexLit"
+Fallback "Legacy Shaders/VertexUnlit"
 }

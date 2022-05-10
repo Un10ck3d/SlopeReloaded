@@ -16,7 +16,7 @@ public class delete_check : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        z_cord = ((int)cam.transform.position.z) - 13;
+        z_cord = ((int)cam.transform.position.z) - 30;
         if (transform.position.z < z_cord)
         {
             Destroy (gameObject);

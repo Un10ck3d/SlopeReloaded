@@ -28,8 +28,8 @@ public class generator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        predeterment.SetValue(startObject, 0);
-        predeterment.SetValue(speedObject, 1);
+        //predeterment.SetValue(startObject, 0);
+        //predeterment.SetValue(speedObject, 1);
         new_level(0, 1, "pre");
     }
 
