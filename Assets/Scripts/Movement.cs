@@ -43,6 +43,7 @@ public class movement : MonoBehaviour
     // Logic for collision or trigger
     void SomeCollision(GameObject other) {
         speedUpText.enabled = false;
+        cam.fieldOfView = 65;
         // Check for Death
         if(other.CompareTag("dead")) {
             SceneManager.LoadScene( SceneManager.GetActiveScene().name );
@@ -52,6 +53,10 @@ public class movement : MonoBehaviour
             SpeedMultiplier += 0.5f;
             speedUpText.enabled = true;
             increaseFOV();
+        }
+
+        else if (other.CompareTag("levelexit")) { 
+            score += 0.5f;
         }
     }
 
@@ -66,7 +71,6 @@ public class movement : MonoBehaviour
     // Update function
     void Update() {
         // Update scoretext
-        score = transform.position.z / 25;
         scoreTextObject.text = (score).ToString("0");
     }
 }
